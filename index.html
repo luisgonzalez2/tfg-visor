@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizer</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./libs/v10.0.0-dist/ol.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <script src="./libs/v10.0.0-dist/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Sección que incluye las agrupaciones e indicadores a escoger por el usuario -->
+    <div id="menu">
+      <div class="section">
+        <h3 class="menu-title">Agrupación</h3>
+        <ul>
+          <li class="dropdown">
+            Población
+            <ul class="dropdown-content">
+              <li>C0 - 55 a 4.306 habitantes</li>
+              <li>C3 - 4.436 a 10.699 habitantes</li>
+              <li>C2 - 12.542 a 20.704 habitantes</li>
+              <li>C1 - 22.453 a 34.653 habitantes</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            Densidad
+            <ul class="dropdown-content">
+              <li>C0 - 1,8 a 150,04 personas por km</li>
+              <li>C3 - 175,3 a 391,28 personas por km</li>
+              <li>C2 - 420,84 a 767,6 personas por km</li>
+              <li>C1 - 930,46 a 1734,84 personas por km</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            Distancia a la capital (km)
+            <ul class="dropdown-content">
+              <li>C1 - 21,041 a 40,449 km</li>
+              <li>C3 - 41,51 a 53,9 km</li>
+              <li>C0 - 54,784 a 72,696 km</li>
+              <li>C2 - 74,92 a 103,62 km</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            Zonas estadísticas
+            <ul class="dropdown-content">
+              <li>Sierra Norte</li>
+              <li>Este Metropolitano</li>
+              <li>Sudoeste Comunidad</li>
+              <li>Norte Metropolitano</li>
+              <li>Sur Metropolitano</li>
+              <li>Sierra Central</li>
+              <li>Sudeste Comunidad</li>
+              <li>Oeste Metropolitano</li>
+              <li>Sierra Sur</li>
+              <li>Nordeste Comunidad</li>
+              <li>Municipio de Madrid</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3 class="menu-title">Indicadores</h3>
+        <ul>
+          <li>Variación de PIB</li>
+          <li>Variación de PIB per cápita</li>
+          <li>Variación de unidades productivas</li>
+          <li>Variación de número de empresas totales</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Sección que incluye el valor medio de los indicadores y un gráfico -->
+    <div id="info">
+      <h2 id="info-title">Media de PIB</h2>
+      <p id="info-subtitle">* del grupo seleccionado</p>
+      <hr class="separator" />
+      <div id="info-content">
+        <p class="data">PIB 2015: 50.000</p>
+        <p class="data">PIB 2016: 51.000</p>
+        <p class="data">PIB 2017: 52.000</p>
+        <p class="data">PIB 2018: 53.000</p>
+        <p class="data">PIB 2019: 54.000</p>
+        <p class="data">PIB 2020: 55.000</p>
+      </div>
+      <hr class="separator" />
+      <canvas
+        id="myChart"
+        width="400"
+        height="200"
+        style="display: none"
+      ></canvas>
+    </div>
+    <!-- Sección que incluye el mapa y los popup de los municipios -->
+    <div id="main"></div>
+    <div class="overlay-container">
+      <span class="overlay-text" id="popup-id"></span><br />
+      <span class="overlay-text" id="popup-municipio"></span><br />
+      <span class="overlay-text" id="popup-indicador-15"></span><br />
+      <span class="overlay-text" id="popup-indicador-16"></span><br />
+      <span class="overlay-text" id="popup-indicador-17"></span><br />
+      <span class="overlay-text" id="popup-indicador-18"></span><br />
+      <span class="overlay-text" id="popup-indicador-19"></span><br />
+      <span class="overlay-text" id="popup-indicador-20"></span><br />
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

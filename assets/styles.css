@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap");
+
+:root {
+  --white-color: #ffffff;
+  --dark-color: #292929;
+  --darker-color: #191914;
+  --highlight-color: #674b9b;
+  --title-font-family: "Poppins", sans-serif;
+  --text-font-family: "Inter", sans-serif;
+  --h2-font-size: 35px;
+  --p-font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: var(--white-color);
+  font-family: var(--text-font-family);
+  font-size: var(--p-font-size);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 9px 20px;
+  background-color: var(--darker-color);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+h2::selection, h3::selection, span::selection, br::selection, p::selection, li::selection {
+  background-color: var(--highlight-color);
+}
+
+.dropdown-content li {
+  font-family: monospace;
+}
+
+li.selected {
+  border: 2px solid var(--highlight-color);
+}
+
+#menu, #info, #main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;  
+}
+
+#menu {
+  background-color: var(--darker-color);
+  overflow-y: auto;
+  width: 20%;
+}
+
+#menu .section {
+  width: 100%;
+}
+
+#menu .section .menu-title {
+  padding: 10px 25px;
+  background-color: var(--highlight-color);
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--dark-color);
+  width: 20%;
+}
+
+#info h2 {
+  font-family: var(--title-font-family);
+  font-size: var(--h2-font-size);
+  width: 100%;
+}
+
+#info #info-subtitle, #info p {
+  margin-bottom: 5px;
+}
+
+.data {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.separator {
+  margin: 25px 0;
+  border-top: 1px solid var(--white-color);
+  width: 100%;
+}
+
+#info #var {
+  margin-top: 35px;
+}
+
+#main {
+  background-color: var(--dark-color);
+  width: 60%;
+}
+
+ul.dropdown-content {
+  display: none;
+  margin-top: 8px;
+  background-color: var(--dark-color);
+}
+
+li.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 9px;
+  background-color: var(--dark-color);
+}
+
+.dropdown-content li:hover {
+  background-color: var(--highlight-color);
+}
+
+.overlay-container {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(41, 41, 41, 0.75);
+  border-radius: 7px;
+  width: 330px;
+}
